@@ -1,14 +1,29 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import ListItem from './ListItem';
 
 const ListContainer = props => {
+	const [shows, setShows] = useState([]);
 	const containerRef = useRef(null);
+	const containerSize = 25;
+	let url = 'https://api.jikan.moe/v4/anime';
+
+	useEffect(() => {
+		if (props.listType === 'score') {
+			url = 'https://api.jikan.moe/v4/anime?order_by=score&sort=desc';
+		} else if (props.listType === 'year') {
+			url = 'https://api.jikan.moe/v4/anime?start_date=2023&sort=desc';
+		}
+
+		fetch(url)
+			.then(res => res.json())
+			.then(data => setShows(data.data));
+	}, []);
 
 	const handleScrollLeft = e => {
-		containerRef.current.scrollBy(-200, 0);
+		containerRef.current.scrollBy(-250, 0);
 	};
 	const handleScrollRight = e => {
-		containerRef.current.scrollBy(200, 0);
+		containerRef.current.scrollBy(250, 0);
 	};
 
 	return (
@@ -25,12 +40,12 @@ const ListContainer = props => {
 					className='container'
 					ref={containerRef}
 				>
-					<ListItem />
-					<ListItem />
-					<ListItem />
-					<ListItem />
-					<ListItem />
-					<ListItem />
+					{shows.map(show => (
+						<ListItem
+							key={show.mal_id}
+							show={show}
+						/>
+					))}
 				</div>
 				<button
 					className='scroll-btn scroll-right'

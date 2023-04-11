@@ -1,14 +1,21 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import ListContainer from './components/ListContainer';
+import { useEffect, useState } from 'react';
 
 function App() {
 	return (
-		<body className='App'>
+		<div className='App'>
 			<NavBar />
-			<ListContainer title='Hot Picks' />
-			<ListContainer title='Latest' />
-		</body>
+			<ListContainer
+				title='Hot Picks'
+				listType='score'
+			/>
+			<ListContainer
+				title='Latest'
+				listType='year'
+			/>
+		</div>
 	);
 }
 

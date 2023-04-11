@@ -1,12 +1,15 @@
-const ListItem = () => {
+const ListItem = props => {
 	return (
 		<article className='list-item'>
-			<img className='temp-img'></img>
+			<img
+				className='card-img'
+				src={props.show.images.jpg.image_url}
+			></img>
 			<p className='card-title'>
-				<strong>Anime Title</strong>
+				<strong>{props.show.title}</strong>
 			</p>
-			<p className='card-date'>Release Date</p>
-			<p className='card-score'>8.95</p>
+			<p className='card-date'>{props.show.year}</p>
+			<p className='card-score'>{props.show.score}</p>
 		</article>
 	);
 };

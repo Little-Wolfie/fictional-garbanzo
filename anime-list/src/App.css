@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(175, 175, 175);
+  background-color: rgb(20, 20, 20);
 }
 
 /* Header */
@@ -31,6 +31,7 @@ body {
 .container-title {
   margin-top: 1rem;
   margin-left: 1rem;
+  color:rgb(255, 0, 76);
 }
 .container-wrapper .container {
   display: flex;
@@ -38,9 +39,10 @@ body {
   overflow: hidden;
   width: 95vw;
   height: 10rem;
-  background-color: aqua;
+  background-color: rgb(51, 51, 51);
   margin: 1rem auto 3rem auto;
   padding-left: 1.1rem;
+  padding-right: 1.1rem;
   scroll-behavior: smooth;
 }
 .container-wrapper {
@@ -70,20 +72,25 @@ body {
   position: relative;
   width: 10rem;
   height: 9.6rem;
-  background-color: blue;
   margin: 0.2rem;
 }
-.list-item .temp-img {
+.list-item .card-img {
   position: absolute;
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  background-color: blueviolet;
+}
+.list-item .card-img:hover {
+  border: 8px solid rgb(255, 0, 106);
+  filter: invert();
 }
 .list-item p {
   position: absolute;
   z-index: 1;
   margin-left: 0.2rem;
   margin-bottom: 0.2rem;
+  color: rgb(255, 0, 76);
+  background-color: rgb(20, 20, 20, 0.8);
 }
 .list-item .card-title {
   top: 0;
