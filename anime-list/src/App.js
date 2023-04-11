@@ -6,8 +6,8 @@ function App() {
 	return (
 		<body className='App'>
 			<NavBar />
-			<ListContainer />
-			<ListContainer />
+			<ListContainer title='Hot Picks' />
+			<ListContainer title='Latest' />
 		</body>
 	);
 }
