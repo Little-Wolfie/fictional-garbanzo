@@ -25,3 +25,42 @@ body {
 .nav-bar button {
   margin-left: 0.4rem;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 95vw;
+  height: 10rem;
+  background-color: aqua;
+  margin: 3rem auto 3rem auto;
+}
+.list-item {
+  width: 10rem;
+  height: 9.6rem;
+  background-color: blue;
+  margin: 0.2rem;
+}
+.list-item .card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.list-item .temp-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: blueviolet;
+}
+.list-item p {
+  position: absolute;
+  z-index: 1;
+}
+.list-item .card-title {
+  top: 0;
+}
+.list-item .card-score {
+  bottom: 1rem;
+}
+.list-item .card-date {
+  bottom: 0;
+}
