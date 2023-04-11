@@ -5,13 +5,15 @@ const ListContainer = props => {
 	const [shows, setShows] = useState([]);
 	const containerRef = useRef(null);
 	const containerSize = 25;
-	let url = 'https://api.jikan.moe/v4/anime';
+	let url = 'https://api.jikan.moe/v4/anime?sfw';
 
 	useEffect(() => {
 		if (props.listType === 'score') {
-			url = 'https://api.jikan.moe/v4/anime?order_by=score&sort=desc';
+			url = 'https://api.jikan.moe/v4/anime?sfw&order_by=score&sort=desc';
 		} else if (props.listType === 'year') {
-			url = 'https://api.jikan.moe/v4/anime?start_date=2023&sort=desc';
+			url =
+				// use template literal for date to be dynamic, use new Date().now maybe?
+				'https://api.jikan.moe/v4/anime?sfw&min_score=6&start_date=2023&status=airing&order_by=start_date';
 		}
 
 		fetch(url)
@@ -28,7 +30,11 @@ const ListContainer = props => {
 
 	return (
 		<div>
-			<h2 className='container-title'>{props.title}</h2>
+			<div className='title-wrapper'>
+				<h2 className='container-title'>{props.title}</h2>
+				<h3 className='more-link'>More...</h3>
+			</div>
+
 			<div className='container-wrapper'>
 				<button
 					className='scroll-btn scroll-left'

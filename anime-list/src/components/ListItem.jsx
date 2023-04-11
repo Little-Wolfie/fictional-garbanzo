@@ -8,7 +8,7 @@ const ListItem = props => {
 			<p className='card-title'>
 				<strong>{props.show.title}</strong>
 			</p>
-			<p className='card-date'>{props.show.year}</p>
+			<p className='card-date'>{props.show.aired.prop.from.year}</p>
 			<p className='card-score'>{props.show.score}</p>
 		</article>
 	);

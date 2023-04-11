@@ -28,9 +28,19 @@ body {
 }
 
 /* Card Container */
+.title-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .container-title {
   margin-top: 1rem;
   margin-left: 1rem;
+  color:rgb(255, 0, 76);
+}
+.more-link {
+  margin-top: 1.5rem;
+  margin-right: 3rem;
   color:rgb(255, 0, 76);
 }
 .container-wrapper .container {
